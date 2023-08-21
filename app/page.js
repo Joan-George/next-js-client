@@ -11,13 +11,16 @@ export default function Home() {
 	const [data, setdata] = useState({});
 	const [todo, setTodo] = useState("");
 
-	const saveTodo = () => {
-		console.log("test");
-	};
-	async function fetchData() {
+	const saveTodo = async () => {
+		await axios.post("http://localhost:3000/api/save", { todo: todo });
+
 		const res = await axios.get("http://localhost:3000/api");
 		setdata(res?.data);
-	}
+	};
+	const fetchData = async () => {
+		const res = await axios.get("http://localhost:3000/api");
+		setdata(res?.data);
+	};
 
 	useEffect(async () => {
 		fetchData();

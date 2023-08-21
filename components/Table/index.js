@@ -3,7 +3,7 @@ import * as dayjs from "dayjs";
 export default function Table({ headers = [], body = [], ...props }) {
 	console.log({ body });
 	return (
-		<div className="inline-block rounded-lg border shadow-2xl overflow-hidden">
+		<div className="inline-block rounded-lg border shadow-2xl overflow-hidden" key={JSON.stringify(body)}>
 			<table className="table-fixed bg-red-50  border-collapse">
 				<thead className=" border-collapse">
 					<tr className="bg-slate-300">
