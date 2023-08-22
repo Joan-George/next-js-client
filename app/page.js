@@ -5,6 +5,7 @@ import Input from "@/components/Input";
 import Table from "@/components/Table";
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { FaBeer } from "react-icons/fa";
 import "./globals.css";
 
 export default function Home() {
@@ -27,6 +28,7 @@ export default function Home() {
 	}, []);
 
 	console.log({ todo });
+	const actionButtons = [{ Name: "Edit", icon: FaBeer }];
 
 	return (
 		<main className="flex flex-col items-center justify-between p-24 gap-2">
